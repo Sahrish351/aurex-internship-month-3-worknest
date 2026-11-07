@@ -1,17 +1,20 @@
 # WorkNest — Known Issues & Planned Enhancements
 
 ## 1. Current Known Issues & Limitations
-In strict adherence to AUREX Month 3 reporting ethics (PDF Section 6: "Never fabricate completed work; clearly distinguish completed vs. blocked"), the following limitations are documented transparently:
+In strict adherence to AUREX Month 3 reporting ethics (PDF Section 6: "Never fabricate completed work; clearly distinguish completed vs. blocked"), the following project conditions are documented transparently:
 
-1. **Email Delivery Service:**
-   - *Status:* Internal in-app notification center implemented.
-   - *Limitation:* External SMTP email notifications (e.g. via SendGrid / Resend) are not configured to avoid hardcoded third-party API keys or unverified email accounts. All alerts are handled in-app via the `Notification` collection.
-2. **WebSocket Real-Time Broadcasts:**
-   - *Status:* REST polling and optimistic UI updates active.
-   - *Limitation:* WebSocket (Socket.io) bidirectional push is not enabled to avoid server statefulness in serverless/free-tier container hosting.
-3. **Cloud Database Provisioning:**
-   - *Status:* Application is fully configured for MongoDB Atlas via `MONGODB_URI`.
-   - *Limitation:* Live Atlas credentials require user-specific cluster provisioning. Fallback environment configuration allows local testing.
+1. **Formal Mentor Capstone Approval:**
+   - *Status:* Proposed Capstone Project pending formal mentor sign-off.
+   - *Condition:* In accordance with AUREX Month 3 guidelines, WorkNest has been fully implemented based on the approved category (Task/Project Management System), but is explicitly noted as a proposed capstone awaiting formal evaluation.
+2. **Email Delivery Service:**
+   - *Status:* Internal in-app notification center implemented and fully verified with unread counts.
+   - *Limitation:* External SMTP email delivery (e.g. via SendGrid / Resend) is not configured in order to prevent hardcoding third-party API credentials. All operational alerts (task assignment, project invites, status updates) are delivered in-app via the `Notification` collection.
+3. **WebSocket Real-Time Broadcasts:**
+   - *Status:* RESTful polling with optimistic UI updates active.
+   - *Limitation:* Bidirectional WebSocket push (Socket.io) is omitted to maintain stateless server design for seamless deployment on serverless and containerized cloud providers (Vercel, Render).
+4. **Cloud Database Provisioning:**
+   - *Status:* VERIFIED & ACTIVE.
+   - *Details:* Successfully connected to MongoDB Atlas (`WorkNestCluster`), roundtrip ping verified (`{"ok":1}`), and seeded with full initial dataset.
 
 ---
 

@@ -137,12 +137,12 @@ def build_pdf(filename="submission/AUREX_Month_3_Submission_Report.pdf"):
     story.append(Paragraph(
         "Built on a decoupled MERN architecture with clear separation of concerns: React SPA client communicating over RESTful HTTPS APIs "
         "with an Express.js server, structured in an MVC pattern with controllers, models, and centralized error handling middleware. "
-        "Data persistence is managed via 6 relational Mongoose schemas in MongoDB Atlas with indexing and cascade deletion.",
+        "Data persistence is managed via 6 document-oriented NoSQL schemas in MongoDB Atlas with document references (ObjectId refs), indexing, and cascade deletion.",
         body_style
     ))
 
     # Database Schema
-    story.append(Paragraph("4. Relational Database Modeling (6 Entities)", h1_style))
+    story.append(Paragraph("4. Document-Oriented NoSQL Data Modeling (6 Entities)", h1_style))
     story.append(Paragraph("• <b>User:</b> Stores credentials (bcrypt hashed), unique normalized email, role enum, account status, and avatar.", bullet_style))
     story.append(Paragraph("• <b>Project:</b> Stores title, description, owner reference, member references, status, priority, and validated due dates.", bullet_style))
     story.append(Paragraph("• <b>Task:</b> Stores title, parent project, assigned user, creator, priority, status enum, and due date.", bullet_style))
@@ -153,9 +153,9 @@ def build_pdf(filename="submission/AUREX_Month_3_Submission_Report.pdf"):
     # Testing Evidence
     story.append(Paragraph("5. Automated Testing & Verification Evidence", h1_style))
     story.append(Paragraph(
-        "Automated integration testing was conducted using Jest and Supertest against the live Express routing engine. "
-        "All 13 automated test cases passed with 100% success rate (0 failures). In addition, an exportable Postman collection "
-        "containing 20 requests across 7 functional groups was created covering positive and negative edge cases.",
+        "Automated integration testing was conducted using Jest and Supertest against the live Express routing engine and MongoDB Atlas. "
+        "All 28 automated test cases across 2 test suites passed with 100% success rate (0 failures). In addition, an exportable Postman collection "
+        "containing 21 requests across 8 functional groups was created covering positive and negative edge cases.",
         body_style
     ))
 
@@ -166,10 +166,10 @@ def build_pdf(filename="submission/AUREX_Month_3_Submission_Report.pdf"):
         [Paragraph("Project Planning & Architecture", table_cell), Paragraph("10%", table_cell), Paragraph("10%", table_cell), Paragraph("REQUIREMENT_ANALYSIS.md, architecture.md", table_cell)],
         [Paragraph("React & Frontend Implementation", table_cell), Paragraph("15%", table_cell), Paragraph("15%", table_cell), Paragraph("Vite SPA, Tailwind editorial theme, Router DOM v6", table_cell)],
         [Paragraph("Backend & API Development", table_cell), Paragraph("15%", table_cell), Paragraph("15%", table_cell), Paragraph("Modular Express MVC, controllers, error middleware", table_cell)],
-        [Paragraph("Database & Data Management", table_cell), Paragraph("10%", table_cell), Paragraph("10%", table_cell), Paragraph("6 interconnected Mongoose models, validation, indexes", table_cell)],
+        [Paragraph("Database & Data Management", table_cell), Paragraph("10%", table_cell), Paragraph("10%", table_cell), Paragraph("6 Mongoose models, ObjectId references, Atlas verified", table_cell)],
         [Paragraph("Authentication & Security", table_cell), Paragraph("10%", table_cell), Paragraph("10%", table_cell), Paragraph("Bcrypt hashing, JWT tokens, RBAC route guards", table_cell)],
         [Paragraph("Business Features & Functionality", table_cell), Paragraph("10%", table_cell), Paragraph("10%", table_cell), Paragraph("Kanban drag-and-drop, task comments, audit logs", table_cell)],
-        [Paragraph("Testing & Debugging", table_cell), Paragraph("10%", table_cell), Paragraph("10%", table_cell), Paragraph("Jest + Supertest (13/13 passed), Postman collection", table_cell)],
+        [Paragraph("Testing & Debugging", table_cell), Paragraph("10%", table_cell), Paragraph("10%", table_cell), Paragraph("Jest + Supertest (28/28 passed), Postman collection", table_cell)],
         [Paragraph("Production Deployment", table_cell), Paragraph("5%", table_cell), Paragraph("5%", table_cell), Paragraph("vercel.json, render.yaml, /api/health endpoint", table_cell)],
         [Paragraph("Code Quality & GitHub Practice", table_cell), Paragraph("5%", table_cell), Paragraph("5%", table_cell), Paragraph("Clean commits, strict .gitignore, zero exposed secrets", table_cell)],
         [Paragraph("Documentation & Presentation", table_cell), Paragraph("5%", table_cell), Paragraph("5%", table_cell), Paragraph("README.md, presentation script, PDF report", table_cell)],

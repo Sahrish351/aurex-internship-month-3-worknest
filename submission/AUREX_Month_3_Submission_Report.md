@@ -7,10 +7,11 @@
 - **Internship Stage:** Month 3 — Industry Projects & Readiness
 - **Project Name:** WorkNest — Team Project & Task Management Platform
 - **Project Category:** Task/project management system (AUREX Approved Category, DOCX item 112)
-- **Candidate Intern:** Sahrish
+- **Candidate Intern:** Sahrish Yaseen
 - **GitHub Profile:** `Sahrish351`
 - **Repository Name:** `aurex-internship-month-3-worknest`
 - **Submission Date:** November 2026
+- **Database Status:** **VERIFIED & CONNECTED (MongoDB Atlas Cloud Cluster)**
 - **Project Approval Status:** **PROPOSED CAPSTONE (Pending Mentor Formal Approval)**
   > [!IMPORTANT]
   > **Project Approval Notice:** As mandated by AUREX Month 3 Guidelines (Section 108: *"Each intern/team will be assigned or approved a real-world project"*), WorkNest is a candidate project proposal falling squarely under the approved domain *"Task/project management system"* (Section 112). It is submitted for formal mentor evaluation and review. No pre-approval is falsely claimed.
@@ -150,9 +151,9 @@ Six interconnected Mongoose collections:
 
 ## 21. CRUD Implementation
 - **Users:** Create (register), Read (directory search/filter), Update (profile, role, status), Delete/Deactivate.
-- **Projects:** Create, Read (search/filter/page), Update details, Delete with cascade cleanup.
-- **Tasks:** Create, Read (kanban/table view), Update (edit details, patch status), Delete with comment cascade.
-- **Comments:** Create, Read (chronological thread), Delete (author/admin only).
+- **Projects:** Create, Read (search/filter/page), Update (modal edit details `PUT /api/projects/:id`), Delete with cascade cleanup.
+- **Tasks:** Create, Read (kanban/table view), Update (edit details, patch status `PATCH /api/tasks/:id/status`), Delete with comment cascade.
+- **Comments:** Create, Read (chronological thread), Update (author/admin editing `PUT /api/comments/:id`), Delete (author/admin only).
 
 ## 22. Security Measures
 - Passwords cryptographically hashed via bcrypt.
@@ -162,13 +163,13 @@ Six interconnected Mongoose collections:
 - Account deactivation check invalidates revoked sessions.
 
 ## 23. Testing Methodology
-- **Automated Integration Testing:** Jest + Supertest executing 13 test cases covering diagnostics, validation, bcrypt hashing, JWT signing, and RBAC guards.
-- **Postman API Test Collection:** 20 requests organized into 7 folders covering positive and negative edge cases.
+- **Automated Integration Testing:** Jest + Supertest executing 28 test cases across 2 suites (`tests/api.test.js` and `tests/integration.test.js`) covering diagnostics, validation, bcrypt hashing, JWT signing, RBAC guards, project/task lifecycle, Kanban drag-and-drop patching, comment updating, and live MongoDB Atlas integration.
+- **Postman API Test Collection:** 21 requests organized into 8 folders covering positive and negative edge cases.
 - **Manual Functional Testing:** Comprehensive verification across viewports, forms, and drag-and-drop workflows.
 
 ## 24. Actual Test Results
-- **Automated Test Suite:** 13 Passed, 0 Failed (100% Pass Rate).
-- **Execution Time:** 4.953 seconds.
+- **Automated Test Suite:** 28 Passed, 0 Failed (100% Pass Rate across 2 test suites).
+- **Execution Time:** ~15.7 seconds.
 
 ## 25. Challenges Encountered
 1. Enforcing relational integrity in document-oriented MongoDB.

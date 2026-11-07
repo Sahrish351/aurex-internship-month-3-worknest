@@ -3,8 +3,8 @@
 > **Tagline:** Plan projects. Organize teams. Deliver work.
 
 [![AUREX Internship](https://img.shields.io/badge/AUREX-Full--Stack%20Month%203-173D32?style=flat-square)](https://aurex.tech)
-[![MERN Stack](https://img.shields.io/badge/Stack-React%20%7C%20Express%20%7C%20MongoDB%20%7C%20Node-286B52?style=flat-square)](https://nodejs.org)
-[![Tests Passing](https://img.shields.io/badge/Jest%20%26%20Supertest-13%2F13%20Passed-green?style=flat-square)](https://jestjs.io)
+[![MERN Stack](https://img.shields.io/badge/Stack-React%20%7C%20Express%20%7C%20MongoDB%20Atlas%20%7C%20Node-286B52?style=flat-square)](https://nodejs.org)
+[![Tests Passing](https://img.shields.io/badge/Jest%20%26%20Supertest-28%2F28%20Passed-green?style=flat-square)](https://jestjs.io)
 [![Status](https://img.shields.io/badge/Approval%20Status-Proposed%20Capstone-amber?style=flat-square)](#important-project-approval-notice)
 
 ---
@@ -79,12 +79,13 @@ WorkNest addresses these challenges with a resilient multi-tier architecture, ve
 - **Security:** Helmet, CORS, `express-rate-limit`, `cookie-parser`
 
 ### Database
-- **Engine:** MongoDB (Local or MongoDB Atlas Cloud)
-- **Entities:** 6 Relational Collections (`User`, `Project`, `Task`, `Comment`, `Notification`, `ActivityLog`)
+- **Engine:** MongoDB Atlas Cloud / MongoDB Local (Document-Oriented NoSQL Database)
+- **ODM:** Mongoose v8+ with schema validation, indexes, timestamps, and virtuals
+- **Entities:** 6 Collections with document references (`User`, `Project`, `Task`, `Comment`, `Notification`, `ActivityLog`)
 
 ### Testing & Tools
-- **Test Runner:** Jest + Supertest (100% Passing Integration Tests)
-- **API Testing:** Postman Collection (`docs/postman/WorkNest_API.postman_collection.json`)
+- **Test Runner:** Jest + Supertest (28/28 Passing Integration & Security Tests, 100% Pass Rate)
+- **API Testing:** Postman Collection (`docs/postman/WorkNest_API.postman_collection.json`) with 21 Requests
 
 ---
 
@@ -200,12 +201,33 @@ npm run dev
 
 ## 11. Automated Testing Instructions
 
-Execute the automated backend integration test suite:
+Execute the automated backend test suites (Core API Security + MongoDB Integration):
 ```bash
 cd backend
 npm test
 ```
-All 13 integration tests will execute, validating health check diagnostics, validation middlewares, bcrypt password hashing, token generation, and role authorization.
+All 28 automated integration tests will execute across both test suites, validating:
+- Service health check diagnostics and database connection state
+- Request validation middlewares and error boundary formatting
+- Bcrypt password hashing (10 salt rounds) and comparison
+- JWT token signing, verification, and tamper rejection
+- Role authorization guards (`admin`, `manager`, `member`)
+- Registration privilege escalation immunity
+- Full project CRUD lifecycle with cascading cleanup
+- Task creation, member assignment enforcement, and Kanban status patching
+- Contextual task comment addition, author-verified editing (`PUT`), and deletion
+- In-app notification delivery and dynamic role-specific dashboard metrics
+
+### Seed Demo Data
+To populate realistic demo data in MongoDB Atlas:
+```bash
+cd backend
+npm run seed
+```
+Demo Accounts:
+- **Admin:** `admin@worknest.test` / `AdminPassword123!`
+- **Manager:** `manager@worknest.test` / `ManagerPassword123!`
+- **Member:** `member@worknest.test` / `MemberPassword123!`
 
 ---
 
@@ -239,5 +261,5 @@ Configure the `baseUrl` variable to `http://localhost:5000/api` and execute test
 ---
 
 ## 15. License & Attribution
-Developed by **Sahrish** for the **AUREX Full-Stack Engineering Internship (Month 3)**.
+Developed by **Sahrish Yaseen** (GitHub: [`Sahrish351`](https://github.com/Sahrish351)) for the **AUREX Full-Stack Engineering Internship (Month 3)**.
 Licensed under the MIT License.

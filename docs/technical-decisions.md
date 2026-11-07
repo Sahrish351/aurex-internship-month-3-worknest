@@ -32,8 +32,8 @@ WorkNest is engineered to fulfill the requirements of the AUREX Month 3 Full-Sta
 - **Rationale:** Avoids giant monolithic files; guarantees consistent error handling through an Express error middleware pipeline, preventing server crashes and unhandled promise rejections.
 
 ### Decision 5: Mongoose ODM with Referential Integrity
-- **Context:** Relational data structures (Users, Projects, Tasks, Comments, Notifications, Activity Logs) inside MongoDB.
-- **Decision:** Use Mongoose schemas with explicit `ref` fields, indexes on foreign keys, and pre-save/delete hooks.
+- **Context:** Referenced document data structures (Users, Projects, Tasks, Comments, Notifications, Activity Logs) inside MongoDB.
+- **Decision:** Use Mongoose schemas with explicit `ref` fields, indexes on referenced `ObjectId` fields, and pre-save/delete hooks.
 - **Rationale:** Enforces schema validation at the application tier while taking advantage of MongoDB's fast read performance and aggregation capabilities.
 
 ### Decision 6: Stateless JWT Authentication with Role-Based Access Control (RBAC)

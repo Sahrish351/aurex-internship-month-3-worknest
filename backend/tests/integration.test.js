@@ -1,13 +1,21 @@
 const request = require('supertest');
 const mongoose = require('mongoose');
+const dns = require('dns');
 const app = require('../src/app');
-const connectDatabase = require('../src/config/database');
+const environment = require('../src/config/environment');
 const User = require('../src/models/User');
 const Project = require('../src/models/Project');
 const Task = require('../src/models/Task');
 const Comment = require('../src/models/Comment');
 const Notification = require('../src/models/Notification');
 const ActivityLog = require('../src/models/ActivityLog');
+
+// Ensure SRV records for MongoDB Atlas resolve reliably across local DNS providers
+try {
+  dns.setServers(['8.8.8.8', '1.1.1.1', '8.8.4.4']);
+} catch (dnsErr) {
+  // Ignore if custom DNS cannot be set
+}
 
 describe('=== WorkNest MongoDB End-to-End Integration Test Suite ===', () => {
   let adminToken = '';
@@ -19,47 +27,99 @@ describe('=== WorkNest MongoDB End-to-End Integration Test Suite ===', () => {
   let testComment = null;
 
   beforeAll(async () => {
-    // Connect to database
-    if (mongoose.connection.readyState === 0) {
-      await connectDatabase();
+    // 1. Compute isolated test database URI (strictly 'worknest_test')
+    const baseUri = environment.mongodbUri;
+    const testDbUri = baseUri.includes('/worknest')
+      ? baseUri.replace(/\/worknest(\?|$)/, '/worknest_test$1')
+      : baseUri.endsWith('/')
+        ? `${baseUri}worknest_test`
+        : `${baseUri}/worknest_test`;
+
+    // 2. Disconnect if previously connected to default app database
+    if (mongoose.connection.readyState !== 0) {
+      await mongoose.connection.close();
     }
 
-    // 1. Authenticate with seeded Admin
+    // 3. Connect strictly to the isolated test database
+    await mongoose.connect(testDbUri, {
+      autoIndex: true,
+      serverSelectionTimeoutMS: 10000,
+    });
+
+    // 4. Strict Safety Assertion: Confirm test database name
+    if (mongoose.connection.name !== 'worknest_test') {
+      throw new Error(
+        `[CRITICAL TEST SAFETY ERROR] Refusing to run tests! Expected database 'worknest_test' but connected to '${mongoose.connection.name}'.`
+      );
+    }
+
+    console.log(`[Integration Test] Safely connected to ISOLATED test database: [${mongoose.connection.name}]`);
+
+    // 5. Clean up any stale data inside the isolated test database
+    await User.deleteMany({});
+    await Project.deleteMany({});
+    await Task.deleteMany({});
+    await Comment.deleteMany({});
+    await Notification.deleteMany({});
+    await ActivityLog.deleteMany({});
+
+    // 6. Seed isolated test users for testing
+    await User.create({
+      name: 'Admin Test User',
+      email: 'admin@worknest.test',
+      password: 'AdminPassword123!',
+      role: 'admin',
+      status: 'active',
+    });
+
+    await User.create({
+      name: 'Manager Test User',
+      email: 'manager@worknest.test',
+      password: 'ManagerPassword123!',
+      role: 'manager',
+      status: 'active',
+    });
+
+    await User.create({
+      name: 'Member Test User',
+      email: 'member@worknest.test',
+      password: 'MemberPassword123!',
+      role: 'member',
+      status: 'active',
+    });
+
+    // 7. Authenticate to obtain valid test JWT tokens
     const adminLoginRes = await request(app)
       .post('/api/auth/login')
       .send({ email: 'admin@worknest.test', password: 'AdminPassword123!' });
     expect(adminLoginRes.statusCode).toBe(200);
     adminToken = adminLoginRes.body.data.token;
 
-    // 2. Authenticate with seeded Manager
     const managerLoginRes = await request(app)
       .post('/api/auth/login')
       .send({ email: 'manager@worknest.test', password: 'ManagerPassword123!' });
     expect(managerLoginRes.statusCode).toBe(200);
     managerToken = managerLoginRes.body.data.token;
 
-    // 3. Authenticate with seeded Member
     const memberLoginRes = await request(app)
       .post('/api/auth/login')
       .send({ email: 'member@worknest.test', password: 'MemberPassword123!' });
     expect(memberLoginRes.statusCode).toBe(200);
     memberToken = memberLoginRes.body.data.token;
-  }, 30000);
+  }, 35000);
 
   afterAll(async () => {
-    // Clean up any test records created during suite
-    try {
-      if (testComment?._id) await Comment.findByIdAndDelete(testComment._id);
-      if (testTask?._id) await Task.findByIdAndDelete(testTask._id);
-      if (testProject?._id) await Project.findByIdAndDelete(testProject._id);
-      if (testUser?._id) await User.findByIdAndDelete(testUser._id);
-    } catch (err) {
-      // Ignore cleanup error
-    }
+    // Strict Safety Assertion: Only drop if connected to 'worknest_test'
     if (mongoose.connection.readyState !== 0) {
+      if (mongoose.connection.name === 'worknest_test') {
+        console.log('[Integration Test] Dropping isolated test database:', mongoose.connection.name);
+        await mongoose.connection.dropDatabase();
+      } else {
+        console.warn('[Integration Test] Skipped dropDatabase: not connected to worknest_test');
+      }
       await mongoose.connection.close();
     }
-  }, 30000);
+  }, 35000);
 
   describe('1. Registration and Authentication API', () => {
     it('should register a new member and reject privilege escalation attempt', async () => {
@@ -275,4 +335,3 @@ describe('=== WorkNest MongoDB End-to-End Integration Test Suite ===', () => {
     });
   });
 });
-

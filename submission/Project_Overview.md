@@ -12,13 +12,13 @@
 ---
 
 ## 2. Executive Summary
-WorkNest is a modern, responsive, multi-tier web application designed to solve team collaboration bottlenecks in growing digital enterprises. It demonstrates end-to-end full-stack capabilities, bridging a reactive React frontend to a modular Node.js/Express REST API and a relational MongoDB Atlas database.
+WorkNest is a modern, responsive, multi-tier web application designed to solve team collaboration bottlenecks in growing digital enterprises. It demonstrates end-to-end full-stack capabilities, bridging a reactive React frontend to a modular Node.js/Express REST API and a document-oriented MongoDB Atlas database.
 
 ### Core Value Propositions
 1. **Multi-Role Governance:** Enforces three distinct operational roles (`admin`, `manager`, `member`) with verified server-side route guards.
 2. **Interactive Sprint Kanban:** Provides drag-and-drop state transitions with persistent backend updates.
 3. **Enterprise Security:** Implements bcrypt cryptographic hashing, stateless JWT authentication, and strict secrets isolation.
-4. **Relational Data Integrity:** Features 6 interconnected Mongoose models with referential integrity and cascading cleanup.
+4. **Referential Data Integrity:** Features 6 interconnected Mongoose NoSQL models with document references (`ObjectId` refs) and cascading cleanup.
 
 ---
 

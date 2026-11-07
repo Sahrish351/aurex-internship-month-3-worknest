@@ -20,7 +20,7 @@
 ## Slide 2: The Problem Space
 - **Disconnected Collaboration:** Teams struggle with lost context across disparate chats and spreadsheets.
 - **Superficial Prototypes:** Most existing project apps lack backend role enforcement, allowing anyone to modify data.
-- **Lack of Relational Integrity:** Missing checks when delegating tasks to non-members.
+- **Lack of Referential Data Integrity:** Missing checks when delegating tasks to non-members.
 
 ---
 

@@ -6,8 +6,18 @@ const Comment = require('./models/Comment');
 const Notification = require('./models/Notification');
 const ActivityLog = require('./models/ActivityLog');
 const connectDatabase = require('./config/database');
+const environment = require('./config/environment');
 
 const seedData = async () => {
+  // CRITICAL PRODUCTION SAFEGUARD
+  if (environment.nodeEnv === 'production' || process.env.NODE_ENV === 'production') {
+    console.error('================================================================');
+    console.error(' [CRITICAL SECURITY ERROR] Database seeding is BLOCKED in production!');
+    console.error(' Demo accounts and test wipes are strictly prohibited on live servers.');
+    console.error('================================================================');
+    process.exit(1);
+  }
+
   try {
     await connectDatabase();
     console.log('[Seed] Connected to database. Clearing existing data...');

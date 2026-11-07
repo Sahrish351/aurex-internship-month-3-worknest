@@ -7,7 +7,7 @@ Developing a multi-tier enterprise web application under strict industry specifi
 
 ## 2. Challenge Log
 
-### Challenge 1: Enforcing Strict Referential Integrity Across Relational Entities in MongoDB
+### Challenge 1: Enforcing Strict Referential Integrity Across Referenced Document Entities in MongoDB
 - **Problem:** MongoDB is fundamentally schema-less and does not automatically reject tasks assigned to users who do not belong to the parent project, nor does it automatically cascade deletions of comments when a task is deleted.
 - **Solution:** Implemented business validation at the controller and Mongoose hook layer. When creating or updating a task, the controller verifies that the target `assignedTo` ID is present in `project.members` or equals `project.owner`. In deletion handlers, explicit cascade routines (`Comment.deleteMany({ task: taskId })`) guarantee zero orphaned documents.
 

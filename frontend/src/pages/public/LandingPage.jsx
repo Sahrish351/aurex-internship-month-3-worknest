@@ -186,7 +186,7 @@ export const LandingPage = () => {
                     <span className="text-xs px-2 py-0.5 rounded-full bg-white text-green-700 font-medium">8</span>
                   </div>
                   <div className="bg-white p-3 rounded-lg border border-brand-border shadow-subtle mb-2">
-                    <div className="text-xs font-semibold text-brand-forest">Mongoose 6-Entity Relational Schemas</div>
+                    <div className="text-xs font-semibold text-brand-forest">Mongoose 6-Entity NoSQL Schemas</div>
                     <div className="text-[11px] text-green-700 font-medium mt-1">✓ Verified with Jest & Supertest</div>
                   </div>
                 </div>

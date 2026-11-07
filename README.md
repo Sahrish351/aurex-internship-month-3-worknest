@@ -26,7 +26,7 @@ Many contemporary task applications are built as single-user toys or basic CRUD 
 - Missing referential constraints (e.g. assigning non-members to private projects).
 - Insecure password storage and secrets leakage.
 
-WorkNest addresses these challenges with a resilient multi-tier architecture, verified relational database modeling, and an editorial-inspired SaaS user experience.
+WorkNest addresses these challenges with a resilient multi-tier architecture, verified document-oriented NoSQL data modeling with Mongoose, and an editorial-inspired SaaS user experience.
 
 ---
 

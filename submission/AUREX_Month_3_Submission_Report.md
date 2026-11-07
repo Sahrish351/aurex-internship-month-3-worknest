@@ -40,7 +40,7 @@ Many contemporary task applications are built as single-user toy projects:
 - They exhibit client-side-only prototypes that lose state on page refresh.
 - They commit hardcoded credentials and expose JWT secrets.
 
-WorkNest addresses these challenges with a clean, decoupled MERN architecture, verified relational modeling with Mongoose, and an editorial SaaS design system.
+WorkNest addresses these challenges with a clean, decoupled MERN architecture, verified document-oriented NoSQL data modeling with Mongoose, and an editorial SaaS design system.
 
 ## 7. Project Objectives
 1. Design and build a multi-tier decoupled web application using React, Express, and MongoDB.
@@ -101,7 +101,7 @@ WorkNest addresses these challenges with a clean, decoupled MERN architecture, v
 Decoupled multi-tier MERN architecture:
 $$\text{React.js Client} \longleftrightarrow \text{REST API / Axios} \longleftrightarrow \text{Node/Express Engine} \longleftrightarrow \text{Middleware \& Controllers} \longleftrightarrow \text{Mongoose ODM} \longleftrightarrow \text{MongoDB Atlas}$$
 
-## 14. Database Design & Relational Modeling
+## 14. Database Design & Document-Oriented NoSQL Modeling
 Six interconnected Mongoose collections:
 1. `User`: `name`, `email` (unique index), `password` (bcrypt hash), `role` (`admin`|`manager`|`member`), `status` (`active`|`inactive`), `avatar`.
 2. `Project`: `title`, `description`, `owner` (ref: User), `members` ([ref: User]), `status`, `priority`, `startDate`, `dueDate`.
@@ -172,7 +172,7 @@ Six interconnected Mongoose collections:
 - **Execution Time:** ~15.7 seconds.
 
 ## 25. Challenges Encountered
-1. Enforcing relational integrity in document-oriented MongoDB.
+1. Enforcing referential integrity and document references in NoSQL MongoDB.
 2. Balancing optimistic UI with backend persistence on Kanban drag-and-drop.
 3. Preventing payload tampering and privilege escalation on public registration.
 4. Ensuring zero secret leakage in Git repositories.

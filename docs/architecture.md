@@ -80,7 +80,7 @@ flowchart TD
 
 ### D. Data Persistence Layer (Mongoose + MongoDB Atlas)
 - **Mongoose ODM:** Defines schemas with strict type constraints, required fields, custom validators, pre-save hooks (e.g., bcrypt password hashing), and indexes.
-- **Relational Integrity:** Models use `mongoose.Schema.Types.ObjectId` references (`ref`) to maintain clean entity relationships across Users, Projects, Tasks, Comments, Notifications, and Activity Logs.
+- **Referential Document Integrity:** Models use `mongoose.Schema.Types.ObjectId` references (`ref`) in MongoDB to maintain clean entity relationships across Users, Projects, Tasks, Comments, Notifications, and Activity Logs.
 
 ---
 

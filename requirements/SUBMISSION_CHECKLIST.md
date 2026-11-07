@@ -23,7 +23,7 @@
 | **5. Authentication & Security** | 10% | Password hashing (`bcrypt`), JWT implementation, protected routes, Role-Based Access Control (RBAC), Helmet, rate-limit. | 10% — Fully Verified |
 | **6. Business Features & Functionality** | 10% | Interactive Kanban board, task assignment validation, comments, internal notifications, dynamic activity feed. | 10% — Fully Verified |
 | **7. Testing & Debugging** | 10% | Postman test collection (positive & negative), Supertest backend integration suite (28/28 passed), live Atlas testing. | 10% — Fully Verified |
-| **8. Production Deployment** | 5% | Deployment configurations for frontend (Vercel `vercel.json`) and backend (Render `render.yaml`), connected to MongoDB Atlas. | 5% — Fully Verified |
+| **8. Production Deployment** | 5% | Deployment configurations for frontend (Vercel `vercel.json`) and backend (Render `render.yaml`), connected to MongoDB Atlas. | Ready for Cloud Launch (Pre-configured) |
 | **9. Code Quality & GitHub Practice** | 5% | Repository organization (`/frontend`, `/backend`), meaningful commits, clean multi-level `.gitignore`, zero committed credentials. | 5% — Fully Verified |
 | **10. Documentation & Presentation** | 5% | Comprehensive `README.md`, Mermaid architecture diagrams, user flow docs, presentation script, PDF submission report. | 5% — Fully Verified |
 | **11. Independence & Problem Solving** | 5% | Self-directed implementation, solving complex domain constraints, clear technical explanations. | 5% — Fully Verified |

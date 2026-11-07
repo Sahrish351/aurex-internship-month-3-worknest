@@ -78,7 +78,7 @@ $$\text{Requirement Analysis} \longrightarrow \text{Architecture \& Schema/API D
 | **State Management** | React Context API | Centralized authentication, user session, and notification state |
 | **Backend Runtime** | Node.js (v18+ LTS / v20+) | High-performance asynchronous JavaScript engine |
 | **Backend Framework** | Express.js (v4+) | Robust RESTful API routing, middleware pipeline, and MVC controllers |
-| **Database** | MongoDB (v6+) | NoSQL document database supporting flexible relational schemas |
+| **Database** | MongoDB (v6+) | Document-oriented NoSQL database supporting flexible document schemas with ObjectId references |
 | **ODM** | Mongoose (v8+) | Schema modeling, validation, relationship references, hooks, and indexes |
 | **Password Security** | bcrypt / bcryptjs | Cryptographic password hashing prior to persistence |
 | **Session Security** | JSON Web Tokens (jsonwebtoken) | Stateless, tamper-proof bearer tokens / HttpOnly cookies |
@@ -102,7 +102,7 @@ $$\text{Requirement Analysis} \longrightarrow \text{Architecture \& Schema/API D
 
 | Evaluation Category | Weight | How WorkNest Satisfies the Criterion |
 | :--- | :---: | :--- |
-| **1. Project Planning & Architecture** | 10% | Comprehensive requirement analysis, system architecture diagrams, relational Mongoose schema design, and complete REST API specifications. |
+| **1. Project Planning & Architecture** | 10% | Comprehensive requirement analysis, system architecture diagrams, Mongoose NoSQL schema design, and complete REST API specifications. |
 | **2. React & Frontend Implementation** | 15% | Modular component hierarchy, responsive layouts, Tailwind CSS styling, controlled forms, React Router DOM, and React Context API state management. |
 | **3. Backend & API Development** | 15% | Clean MVC architecture in Express, modular routes, robust controller layer, centralized error middleware, and consistent JSON responses. |
 | **4. Database & Data Management** | 10% | 6 interconnected Mongoose models (`User`, `Project`, `Task`, `Comment`, `Notification`, `ActivityLog`), indexes, referential integrity, and cascading cleanup. |

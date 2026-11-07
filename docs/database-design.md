@@ -1,7 +1,7 @@
 # WorkNest — Database Schema & Data Modeling
 
 ## 1. Entity-Relationship Overview
-WorkNest is modeled around six relational MongoDB collections using Mongoose ODM. Although MongoDB is document-oriented, WorkNest uses strict referential modeling with `ObjectId` references to model complex enterprise collaboration workflows.
+WorkNest is modeled around six document-oriented NoSQL MongoDB collections using Mongoose ODM. WorkNest uses strict referential modeling with `ObjectId` document references to model complex enterprise collaboration workflows.
 
 ```mermaid
 erDiagram

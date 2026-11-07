@@ -4,6 +4,8 @@
   "description": "WorkNest - Team Project & Task Management Platform (AUREX Month 3 Full-Stack Capstone)",
   "private": true,
   "scripts": {
+    "postinstall": "npm install --prefix backend",
+    "start": "node backend/src/server.js",
     "test": "npm --prefix backend test",
     "seed": "npm --prefix backend run seed",
     "dev:backend": "npm --prefix backend run dev",

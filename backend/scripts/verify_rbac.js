@@ -54,3 +54,4 @@ testRBAC().catch(err => {
   console.error('[RBAC Error]:', err);
   process.exit(1);
 });
+

@@ -6,6 +6,7 @@ import { userService } from '../../services/dashboardService';
 import { KanbanBoard } from '../../components/tasks/KanbanBoard';
 import { CreateTaskModal } from '../../components/tasks/CreateTaskModal';
 import { TaskDetailModal } from '../../components/tasks/TaskDetailModal';
+import { EditProjectModal } from '../../components/projects/EditProjectModal';
 import { Modal } from '../../components/common/Modal';
 import { LoadingSkeleton } from '../../components/common/LoadingSkeleton';
 import { useAuth } from '../../context/AuthContext';
@@ -15,6 +16,7 @@ import {
   Users,
   CheckCircle2,
   Trash2,
+  Edit3,
   UserPlus,
   ArrowLeft,
   Plus,
@@ -34,6 +36,7 @@ export const ProjectDetailPage = () => {
 
   // Modals
   const [isTaskModalOpen, setIsTaskModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [defaultTaskStatus, setDefaultTaskStatus] = useState('To Do');
   const [selectedTask, setSelectedTask] = useState(null);
   const [isAddMemberModalOpen, setIsAddMemberModalOpen] = useState(false);
@@ -229,13 +232,22 @@ export const ProjectDetailPage = () => {
             </button>
 
             {canManageProject && (
-              <button
-                onClick={handleDeleteProject}
-                className="p-2.5 rounded-xl border border-red-200 text-red-600 hover:bg-red-50 transition-colors"
-                title="Delete Project"
-              >
-                <Trash2 className="w-4 h-4" />
-              </button>
+              <>
+                <button
+                  onClick={() => setIsEditModalOpen(true)}
+                  className="p-2.5 rounded-xl border border-brand-border text-brand-forest hover:bg-brand-ivory transition-colors"
+                  title="Edit Project Details"
+                >
+                  <Edit3 className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={handleDeleteProject}
+                  className="p-2.5 rounded-xl border border-red-200 text-red-600 hover:bg-red-50 transition-colors"
+                  title="Delete Project"
+                >
+                  <Trash2 className="w-4 h-4" />
+                </button>
+              </>
             )}
           </div>
         </div>
@@ -378,6 +390,18 @@ export const ProjectDetailPage = () => {
           </div>
         </form>
       </Modal>
+
+      {/* Edit Project Modal */}
+      {project && (
+        <EditProjectModal
+          isOpen={isEditModalOpen}
+          onClose={() => setIsEditModalOpen(false)}
+          project={project}
+          onProjectUpdated={(updated) => {
+            setProject((prev) => ({ ...prev, ...updated }));
+          }}
+        />
+      )}
     </div>
   );
 };

@@ -1,0 +1,97 @@
+=== PAGE 1 ===
+AUREX INTERNSHIP
+FULL-STACK ENGINEERING — MONTH 3 INDUSTRY PROJECTS
+MONTHLY INDUSTRY SPECIFICATION
+DURATION
+1 Month (4 Weeks)
+TOTAL WORKLOAD
+40 Hours / Month
+WEEKLY COMMITMENT
+~10 Hours / Wk
+MODE & REVIEW
+Online + Mentor
+1. Month 3 Overview & Monthly Goals
+The objective of Month 3 is to shift interns from isolated technical learning to building production-grade, industry-
+level full-stack applications. Interns will analyze complex requirements, architect multi-tier systems, build business
+logic, implement security and testing, and deploy a complete project independently.
+2. Industry-Grade Project Lifecycle
+SYSTEM ARCHITECTURE
+Requirement Analysis
+Database & API Design
+➔
+FULL-STACK CORE
+React + Express + Mongo
+RBAC Auth & Logic
+➔
+PRODUCTION & PORTFOLIO
+Testing & Deployment
+Documentation & Demo
+3. Comprehensive Monthly Tasks & Project Scope
+Interns must complete the following integrated core modules to deliver their industry project package:
+Task 1: System Architecture, Database Design & API Planning
+Requirement Analysis: Deﬁne problem statements, target user roles (e.g., Admin, User, Provider), and non-
+functional requirements.
+Architecture & Schemas: Design multi-entity database schemas with relationships and specify full REST API
+endpoints prior to coding.
+Task 2: Full-Stack Core Development (React, Express & MongoDB)
+Backend Engine: Develop a modular Express server with controllers, models, routes, custom error
+middleware, and database validation.
+Frontend Application: Build component-driven React applications consuming backend APIs with state
+management and dynamic UI feedback.
+Task 3: Role-Based Authentication & Advanced Business Logic
+Authentication & RBAC: Secure routes using bcrypt password hashing, JWT authorization, and role-based
+access control.
+Domain Logic & Validation: Implement complex feature workﬂows (e.g., booking, cart/checkout, tracking)
+alongside robust error handling.
+Task 4: Production Deployment, Testing & Portfolio Deliverable
+Testing & Security: Conduct functional/API testing (Postman) and ensure .env key protection and zero
+plain-text secrets.
+Deployment & Docs: Deploy frontend (Vercel) and backend (Render/Railway), and assemble a professional
+GitHub portfolio with full README docs.
+AUREX Full-Stack Engineering Internship — Month 3 Roadmap Page 1 of 2
+
+=== PAGE 2 ===
+4. Overall Monthly Evaluation Criteria Breakdown (Total: 100%)
+EVALUATION AREA WEIGHT TECHNICAL SCOPE & EVALUATION FOCUS
+Project Planning & Architecture 10% Requirement specs, system architecture diagrams, database
+schemas, and API endpoint design.
+React & Frontend Implementation 15% Component hierarchy, state management, controlled forms,
+router integration, and responsive UI.
+Backend & API Development 15% Express server structure, controllers, middleware, status codes,
+and modular route architecture.
+Database & Data Management 10% Mongoose model design, schema validation, entity relationships,
+and CRUD persistence.
+Authentication & Security 10% Password hashing (bcrypt), JWT implementation, protected
+routes, and Role-Based Access Control.
+Business Features & Logic 10% Domain-speciﬁc workﬂows, business logic implementation, and
+edge-case handling.
+Testing & Debugging 10% Postman API test collections, functional frontend/backend
+veriﬁcation, and bug ﬁxes.
+Production Deployment 5% Live deployment of frontend (Vercel) and backend
+(Render/Railway) connected to MongoDB Atlas.
+Code Quality & GitHub Practice 5% Repository organization, meaningful commit history,
+.gitignore usage, and clean code.
+Documentation & Presentation 5% Comprehensive README.md, architecture docs, screenshots, and
+technical explanation.
+Independence & Problem Solving 5% Ability to research, debug, and implement requirements without
+continuous spoon-feeding.
+5. Security & Secrets Management Policy
+Mandatory Security Directives
+Secrets Isolation (.env): Database credentials, JWT secrets, and private API keys must never be committed
+to GitHub repositories. Include .env in .gitignore.
+Password Security: All user passwords must be hashed using bcrypt prior to storage. Plain-text password
+storage is strictly forbidden.
+Role Authorization: Backend routes must enforce strict permission checks to prevent unauthorized access
+across user roles.
+6. Final Submission Deliverables & Ethics Guidelines
+Deliverables & Ethics Policy
+At the conclusion of Month 3, interns must submit their full industry project package containing:
+GitHub Repository: Professional repository containing /frontend and /backend folders, clean commit
+history, and a detailed README.md.
+Live Production Links: Deployed live URLs for both the Frontend interface and Backend API service.
+Documentation Package: Architecture diagram, database schema blueprint, API endpoint list, and Postman
+testing collection.
+Originality & Code Ownership: Utilizing documentation and AI tools for debugging is permitted, but
+plagiarizing complete projects is strictly prohibited. Interns must be capable of independently explaining their
+technical implementation.
+AUREX Full-Stack Engineering Internship — Month 3 Roadmap Page 2 of 2

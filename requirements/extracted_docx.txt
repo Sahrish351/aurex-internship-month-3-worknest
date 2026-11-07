@@ -1,0 +1,772 @@
+AUREX
+Full-Stack Engineering Internship
+Month 3 — Industry-Level Full-Stack Projects & Industry Readiness
+1. Month 3 Overview
+Duration: 4 Weeks
+Expected Workload: 10 Hours per Week
+Weekly Submission: Every Saturday
+Next Week's Work & Resources: Sent every Sunday Night
+Learning Model: Self-Learning + Practical Development + Mentor Review
+Mode: Fully Online
+Month 3 Objective
+The purpose of Month 3 is to move interns from individual technical tasks to complete, industry-style full-stack application development.
+By the end of Month 3, interns should be able to:
+Analyze a real-world project requirement.
+Break a project into frontend, backend, database, and API components.
+Design a basic system architecture.
+Build reusable React.js components.
+Manage application state effectively.
+Consume and integrate REST APIs.
+Build backend APIs using Node.js and Express.js.
+Design and manage MongoDB databases using Mongoose.
+Implement authentication and authorization.
+Use JWT and bcrypt appropriately.
+Perform CRUD operations.
+Handle API errors and validation.
+Connect frontend, backend, and database.
+Use Git/GitHub professionally in a project environment.
+Test major application functionality.
+Deploy a complete full-stack application.
+Write proper project documentation.
+Explain their technical implementation independently.
+Work on a project without continuous step-by-step mentor guidance.
+Month 3 Philosophy
+Month 1 focused on:
+Frontend Foundation
+↓  Month 2 focused on:
+React + APIs + Backend + Database
+↓  Month 3 focuses on:
+Complete Full-Stack Applications + Industry Readiness
+The goal is no longer to teach individual technologies separately. Interns should now combine previously learned technologies to solve real-world problems.
+2. Weekly Working Model
+Interns are expected to complete approximately 10 hours per week. The hours are flexible and can be distributed according to the intern's schedule.
+Activity
+Expected Time
+Project planning/research
+1.5 hours
+Development
+5 hours
+Testing/debugging
+1.5 hours
+Documentation/GitHub
+1 hour
+Self-review
+1 hour
+Total
+10 hours
+These are approximate guidelines rather than compulsory daily timings. During project weeks, interns should prioritize implementation and problem-solving over passive learning.
+3. AUREX Learning Model
+Month 3 will continue the same self-learning model.
+AUREX/mentors will provide:
+Project requirements
+Technical expectations
+Suggested architecture
+Required technologies
+Recommended resources where necessary
+Weekly milestones
+Submission requirements
+Evaluation criteria
+Interns are expected to:
+Analyze → Research → Plan → Implement → Test → Debug → Deploy → Document
+Mentors will provide guidance and feedback but will not continuously write or implement the project for interns.
+4. Weekly Internship Cycle
+The same fixed weekly cycle will continue.
+Sunday Night — New Week Released
+AUREX/Domain Leader sends:
+Weekly objectives
+Project milestone
+Requirements
+Technical expectations
+Required resources
+Submission format
+Evaluation criteria
+Saturday deadline
+↓  Monday–Friday — Development
+Interns: Plan → Research → Code → Test → Debug
+↓  Saturday — Submission
+Interns submit the assigned milestone/work.
+↓  Sunday — Mentor Review
+Mentors:
+Review implementation
+Check functionality
+Review code quality
+Identify issues
+Provide feedback
+Track progress
+Record evaluation
+Identify blockers
+↓  Sunday Night
+Next week's milestone is released.
+WEEK 1 — Project Planning, Architecture & Development Setup
+Theme
+Real-World Requirement Analysis + System Design + Project Setup
+Week 1 Objective
+Interns will learn how to approach a complete full-stack project before writing large amounts of code.
+The focus will be on:
+Requirement → Architecture → Database → API → Frontend → Development Plan
+A. Project Selection
+Each intern/team will be assigned or approved a real-world project.
+Possible project categories:
+E-commerce application
+Appointment/booking system
+Task/project management system
+Learning management system
+Event management system
+Inventory management system
+Service marketplace
+Expense management system
+Job/internship portal
+Small business management system
+Projects should have enough complexity to demonstrate full-stack skills.
+Important: The project must not simply be a basic CRUD form. It should include multiple entities, authentication, API integration, database operations and meaningful business logic.
+B. Requirement Analysis
+Interns should identify:
+Problem statement
+Target users
+User roles
+Core features
+Functional requirements
+Non-functional requirements
+Main user flows
+Required data
+Authentication requirements
+Admin functionality where applicable
+Example User Roles
+User
+Admin
+Manager
+Service Provider
+The exact roles depend on the selected project.
+C. System Architecture
+Interns should create a basic architecture showing:
+React Frontend → REST APIs → Node.js + Express.js → Mongoose → MongoDB
+They should understand how data moves through the application.
+D. Database Design
+Interns should identify:
+Collections
+Fields
+Relationships
+Required/optional fields
+Data types
+Basic indexes where appropriate
+Example: Users, Products, Orders, Categories, Payments — depending on the project.
+Interns should create a basic ER-style/database relationship diagram where applicable.
+E. API Planning
+Before implementation, interns should prepare an API list. Example:
+POST   /api/auth/register
+POST   /api/auth/login
+GET    /api/products
+GET    /api/products/:id
+POST   /api/products
+PUT    /api/products/:id
+DELETE /api/products/:id
+The actual endpoints depend on the project.
+F. Project Repository
+The project must use GitHub from the beginning.
+Recommended structure:
+project-name/
+frontend/
+backend/
+README.md
+.gitignore
+Interns should use meaningful commits throughout development.
+G. Week 1 Practical Task
+Prepare a complete Project Planning & Technical Design Document. It should contain:
+Project title
+Problem statement
+Objectives
+Target users
+User roles
+Features
+Functional requirements
+Non-functional requirements
+System architecture
+Database design
+API list
+Basic UI flow
+Technology stack
+GitHub repository
+Development plan
+H. Week 1 Submission — Saturday
+Submit:
+GitHub repository
+Project proposal
+System architecture diagram
+Database design
+API documentation/list
+Basic UI/user flow
+Development plan
+Short explanation of technical decisions
+I. Week 1 Mentor Review
+Requirements
+Problem clearly defined
+Features realistic
+User roles identified
+Requirements understandable
+Architecture
+Frontend/backend separation
+API layer understood
+Database connection planned
+Technology choices appropriate
+Database
+Collections identified
+Relationships reasonable
+Fields appropriate
+API
+Endpoints logically designed
+HTTP methods appropriate
+CRUD requirements identified
+Professional Practice
+GitHub repository
+README
+Meaningful commits
+Documentation quality
+WEEK 2 — Full-Stack Core Development
+Theme
+Frontend + Backend + Database Integration
+Week 2 Objective
+Interns will begin implementing the actual project and establish communication between:
+React → API → Express → MongoDB
+A. Backend Implementation
+Interns should implement the project backend using: Node.js, Express.js, MongoDB, Mongoose.
+They should create:
+Express server
+Environment configuration
+Database connection
+Routes
+Controllers
+Models
+Middleware
+Error handling
+B. MongoDB/Mongoose
+Interns should implement the previously designed database. They should demonstrate:
+Schema creation
+Models
+CRUD operations
+Basic validation
+Relationships/references where required
+Proper database queries
+C. REST API Development
+Interns should implement the project's major APIs. Expected operations: GET, POST, PUT/PATCH, DELETE.
+Where applicable, APIs should include:
+Request validation
+Appropriate status codes
+Error responses
+Proper response structure
+D. React Frontend
+Interns should build the main application interface, using React.js, Components, Props, State, Forms, React Router where required, and API integration.
+The frontend should be component-based rather than one large component.
+E. API Integration
+The React application must communicate with the backend. Interns should implement:
+GET requests
+POST requests
+Update requests
+Delete requests
+Loading states
+Error handling
+Success feedback
+F. Week 2 Development Milestone
+By the end of Week 2, the project should have:
+Working React frontend
+Working Express backend
+MongoDB connection
+Major database models
+Core REST APIs
+Frontend/API communication
+At least one complete end-to-end feature
+Example flow:
+User enters data → React Form → API Request → Express Route → Controller → Mongoose → MongoDB → Response → React UI
+G. Week 2 Submission — Saturday
+GitHub repository
+Frontend code
+Backend code
+Database implementation
+API documentation
+Working API demonstration
+Screenshots/video
+List of completed features
+Known issues/blockers
+H. Week 2 Mentor Review
+Project architecture
+React component structure
+API implementation
+Database implementation
+CRUD functionality
+API/frontend integration
+Error handling
+Code organization
+GitHub commits
+Feature progress
+WEEK 3 — Authentication, Advanced Features & Testing
+Theme
+Authentication + Authorization + Business Logic + Testing
+Week 3 Objective
+Interns will transform the basic application into a more realistic production-style system.
+A. Authentication
+Interns should implement authentication using: JWT, bcrypt, Protected routes, Login, Registration, Logout/session handling as appropriate.
+Required Features (depending on the project)
+User registration
+User login
+Password hashing
+Token generation
+Token verification
+Protected API routes
+Protected frontend routes
+B. Authorization
+If the project has multiple roles, implement role-based access.
+Example: User → can access user features. Admin → can access admin dashboard.
+Interns should understand the difference between:
+Authentication = Who are you?  |  Authorization = What are you allowed to do?
+C. Frontend Authentication
+React should handle:
+Login form
+Registration form
+Authentication state
+Protected routes
+User information
+Logout
+Unauthorized access handling
+D. Advanced Business Logic
+Interns should implement project-specific logic. Examples:
+Booking System
+Availability checking
+Booking creation
+Booking status
+E-commerce
+Cart
+Order creation
+Product availability
+LMS
+Course enrollment
+Progress tracking
+User dashboard
+Inventory
+Stock updates
+Low-stock status
+Product management
+The exact business logic depends on the selected project.
+E. Validation & Error Handling
+Interns should improve:
+Frontend validation
+Backend validation
+API error responses
+User-friendly error messages
+Invalid request handling
+Authentication errors
+Database errors
+F. Testing
+Functional Testing
+Registration
+Login
+CRUD operations
+Main workflows
+Authentication
+Authorization
+Forms
+Error cases
+API Testing (using a tool such as Postman)
+Successful requests
+Invalid requests
+Unauthorized requests
+Missing data
+Invalid IDs
+Server errors
+G. Week 3 Practical Task
+Complete: Authentication + Major Business Features + Testing.
+The project should now function as a usable full-stack application rather than a collection of separate pages and APIs.
+H. Week 3 Submission — Saturday
+Updated GitHub repository
+Authentication implementation
+Role-based access where applicable
+Major business features
+Postman/API collection
+Testing evidence
+Screenshots/video
+Updated README
+Known bugs/issues
+I. Week 3 Mentor Review
+Authentication
+Registration
+Login
+Password hashing
+JWT
+Protected routes
+Authorization
+Functionality
+Major features working
+Business logic implemented
+CRUD operations working
+Validation working
+Testing
+API testing
+Functional testing
+Edge cases
+Error handling
+Code Quality
+Reusable components
+Organized backend
+Meaningful naming
+Proper error handling
+No unnecessary code
+WEEK 4 — Deployment, Testing, Documentation & Final Presentation
+Theme
+Production Readiness + Deployment + Portfolio
+Week 4 Objective
+Interns will finalize the project and make it suitable for demonstration as an industry-style portfolio project.
+A. Final Feature Completion
+All major project requirements must be completed. Interns should:
+Fix remaining bugs
+Complete missing features
+Improve UI
+Improve API handling
+Optimize obvious issues
+Remove debug code
+Clean project structure
+B. Production Configuration
+Interns should understand:
+Environment variables
+.env
+.gitignore
+API base URLs
+Production configuration
+Secret/key protection
+Important: Sensitive information must never be committed to GitHub — e.g. JWT secrets, database credentials, API keys, passwords.
+C. Deployment
+Interns should deploy the complete application.
+React Frontend → Frontend Hosting
+Node/Express Backend → Backend Hosting
+MongoDB → MongoDB Atlas
+The exact hosting platform may depend on AUREX's approved deployment options.
+D. Final Testing
+Frontend Testing
+Desktop
+Mobile
+Forms
+Navigation
+Authentication
+Main features
+Backend Testing
+APIs
+Authentication
+Authorization
+Validation
+Error handling
+Database Testing
+Create
+Read
+Update
+Delete
+Relationships/data consistency
+Integration Testing
+Verify Frontend → Backend → Database works correctly in the deployed environment.
+E. Documentation
+Final README must include:
+Project Overview
+Problem Statement
+Features
+User Roles
+Technology Stack
+System Architecture
+Database Structure
+API Documentation
+Installation Instructions
+Environment Variables
+Running Locally
+Deployment
+Screenshots
+Known Limitations
+Future Improvements
+F. GitHub Portfolio Requirements
+The repository should demonstrate:
+Meaningful commits
+Clear README
+Organized folders
+Proper .gitignore
+No exposed secrets
+Clear project description
+Deployment links
+Screenshots
+Technology stack
+Interns should be able to use the project as a portfolio item when applying for jobs or freelance work.
+G. Week 4 Final Submission — Saturday
+Project
+Complete source code
+GitHub repository
+Live frontend URL
+Live backend/API URL where applicable
+Working database integration
+Documentation
+Final README
+API documentation
+Architecture diagram
+Database design
+Testing
+Testing checklist
+Postman collection
+Evidence of major test cases
+Presentation
+Project demonstration
+Short technical explanation
+Major challenges
+Solutions implemented
+Future improvements
+H. Week 4 Mentor Final Review
+Functionality
+Core features
+CRUD
+Authentication
+Authorization
+Business logic
+API integration
+Technical Implementation
+React
+State management
+REST APIs
+Node.js
+Express.js
+MongoDB
+Mongoose
+JWT
+bcrypt
+Code Quality
+Structure
+Reusability
+Naming
+Error handling
+Maintainability
+Testing
+Functional testing
+API testing
+Edge cases
+Bug fixing
+Deployment
+Frontend deployed
+Backend deployed
+Database connected
+Environment variables configured correctly
+Documentation
+README
+Architecture
+API documentation
+Setup instructions
+Professional Practice
+GitHub history
+Commit quality
+Communication
+Deadline discipline
+Ability to explain the project
+5. Month 3 Final Deliverables
+By the end of Month 3, each intern/team should have at least one substantial full-stack project completed.
+For stronger interns/teams, AUREX may require a second smaller project or additional advanced features.
+Deliverable 1 — Project Planning
+Project Architecture & Technical Documentation. Includes:
+Requirements
+Architecture
+Database design
+API design
+User flows
+↓  Deliverable 2 — Full-Stack Application
+Working React + Node.js + Express + MongoDB Application. Includes:
+Frontend
+Backend
+Database
+REST APIs
+CRUD
+Authentication
+↓  Deliverable 3 — Production-Ready Version
+Includes:
+Authentication/authorization
+Business logic
+Validation
+Error handling
+Testing
+Deployment
+↓  Deliverable 4 — Portfolio Package
+Includes:
+GitHub repository
+Live URL
+README
+Screenshots
+API documentation
+Architecture diagram
+Testing evidence
+Project presentation
+6. Month 3 Skill Progression
+Project Requirement Analysis
+↓  System Architecture
+↓  Database Design
+↓  API Planning
+↓  Full-Stack Development
+↓  Authentication & Authorization
+↓  Business Logic
+↓  Testing & Debugging
+↓  Deployment
+↓  Documentation
+↓  Portfolio-Ready Project
+7. Industry-Level Development Practices
+During Month 3, interns should start following professional development practices.
+Git/GitHub
+Commit regularly
+Write meaningful commit messages
+Avoid uploading broken/unrelated code
+Maintain a clean repository
+Use branches where appropriate
+Keep README updated
+Code Quality
+Use reusable components
+Avoid unnecessary duplication
+Use meaningful names
+Organize files properly
+Handle errors properly
+Remove debug code before final submission
+Security
+Interns must understand basic security practices:
+Passwords must be hashed
+JWT secrets must not be exposed
+.env must not be committed
+Database credentials must remain private
+APIs should validate incoming data
+Protected routes must verify authentication
+8. Mentor Responsibilities During Month 3
+Mentors are responsible for project supervision, review and technical guidance, not completing the project for interns.
+Mentors should:
+Review project proposals
+Approve project scope
+Review architecture
+Review weekly milestones
+Check GitHub activity
+Review code
+Identify technical issues
+Provide constructive feedback
+Help with genuine blockers
+Track progress
+Conduct final project review
+Mentors should NOT:
+Write the complete project
+Provide complete solutions for normal problems
+Continuously guide every coding step
+Debug every issue themselves
+Allow interns to submit work they cannot explain
+The goal is to simulate a professional development environment.
+9. Intern Responsibilities During Month 3
+Interns are responsible for:
+Understanding project requirements
+Planning before coding
+Completing weekly milestones
+Researching technical problems
+Maintaining GitHub
+Testing their own implementation
+Fixing identified issues
+Meeting deadlines
+Applying mentor feedback
+Maintaining documentation
+Protecting credentials/secrets
+Explaining their own code
+Communicating blockers professionally
+10. External Resources & AI Usage
+Interns may use:
+Official documentation
+YouTube
+Stack Overflow
+Developer articles
+GitHub
+Postman documentation
+MongoDB documentation
+React documentation
+Express.js documentation
+AI tools for learning, debugging and research
+However: AI or external resources may assist the intern, but the intern must understand and be able to explain all submitted code.
+Copying a complete application and submitting it as original work is not acceptable.
+11. Original Work Policy
+The final project must represent the intern's own work.
+Not acceptable:
+Copying another intern's project
+Downloading a complete project and submitting it
+Copying a complete GitHub project
+Misrepresenting someone else's work
+Using AI to generate an entire application without understanding it
+Learning from tutorials, documentation and examples is allowed.
+12. Month 3 Final Evaluation
+The final evaluation should consider the complete development journey, not just the final application.
+Evaluation Area
+Weight
+Project Planning & Architecture
+10%
+React & Frontend Implementation
+15%
+Backend & API Development
+15%
+Database & Data Management
+10%
+Authentication & Security
+10%
+Business Features & Functionality
+10%
+Testing & Debugging
+10%
+Deployment
+5%
+Code Quality & GitHub Practice
+5%
+Documentation & Presentation
+5%
+Independence & Problem Solving
+5%
+Total
+100%
+This is an internal internship progress score, not a university examination.
+13. Month 3 Final Review — Industry Readiness
+At the end of Month 3, the mentor should determine whether the intern can independently handle a basic full-stack development requirement.
+The review should consider:
+Technical understanding
+Project quality
+Code quality
+GitHub activity
+Problem-solving ability
+Ability to research independently
+API understanding
+Database understanding
+Authentication knowledge
+Testing ability
+Deployment knowledge
+Documentation
+Communication
+Deadline discipline
+Ability to explain their own implementation
+14. Month 3 End Goal
+By the end of the internship, an intern should be able to receive a real-world requirement and independently:
+Understand
+↓  Analyze
+↓  Plan
+↓  Design
+↓  Develop Frontend
+↓  Develop Backend
+↓  Design Database
+↓  Integrate APIs
+↓  Implement Authentication
+↓  Test
+↓  Debug
+↓  Deploy
+↓  Document
+↓  Present
+without requiring step-by-step spoon-feeding.
+15. Final AUREX Full-Stack Internship Progression
+The complete three-month journey should therefore be:
+MONTH 1 — Foundation
+Git/GitHub → HTML → CSS → Responsive Design → JavaScript → DOM → Forms → localStorage
+↓  MONTH 2 — Full-Stack Development
+React → APIs → State Management → Node.js → Express.js → MongoDB/Mongoose → CRUD → Authentication
+↓  MONTH 3 — Industry Projects
+Requirement Analysis → Architecture → Full-Stack Project → Authentication → Business Logic → Testing → Deployment → Documentation → Portfolio
+Final Outcome
+By completing all three months, the intern should have:
+Strong frontend fundamentals
+React development experience
+Backend/API development experience
+MongoDB/Mongoose experience
+Authentication implementation experience
+Real full-stack project experience
+Testing/debugging experience
+Deployment experience
+Professional GitHub portfolio
+Experience following an industry-style development workflow

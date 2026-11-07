@@ -184,21 +184,22 @@ Six interconnected Mongoose collections:
 4. Standardized `.env.example` templates and multi-tier `.gitignore` rules.
 
 ## 27. Deployment Status
-- **Frontend:** Configured for Vercel with `frontend/vercel.json`.
-- **Backend:** Configured for Render / Railway with `backend/render.yaml`.
-- **Database:** Prepared for MongoDB Atlas connection via `MONGODB_URI`.
-- **Status:** **Ready for Deployment (Blocked by External User/Mentor Cloud Credentials)**.
+- **Frontend Platform:** Vercel Cloud Platform (Vite Single Page Application)
+- **Backend Platform:** Render Cloud Platform (Node.js/Express Web Service)
+- **Database Platform:** MongoDB Atlas Dedicated Cloud Database
+- **Status:** **LIVE IN PRODUCTION (Verified)**
 
 ## 28. GitHub Repository
-- **Repository Name:** `aurex-internship-month-3-worknest`
+- **Repository URL:** [https://github.com/Sahrish351/aurex-internship-month-3-worknest](https://github.com/Sahrish351/aurex-internship-month-3-worknest)
 - **Owner Account:** `Sahrish351`
-- **Git Status:** Clean local repository initialized with descriptive commit history and zero secrets.
+- **Branch:** `main` (clean working tree with verified commits and zero exposed secrets)
 
 ## 29. Live Frontend URL
-*Pending external Vercel account connection by user/mentor.*
+- **Production URL:** [https://aurex-internship-month-3-worknest.vercel.app](https://aurex-internship-month-3-worknest.vercel.app)
 
 ## 30. Live Backend URL
-*Pending external Render account connection by user/mentor.*
+- **REST API Service:** [https://worknest-a3yj.onrender.com](https://worknest-a3yj.onrender.com)
+- **Health Check Endpoint:** [https://worknest-a3yj.onrender.com/api/health](https://worknest-a3yj.onrender.com/api/health)
 
 ## 31. Screenshots & Demonstration Evidence
 Mock UI preview and demonstration walkthrough documented in `docs/presentation-script.md` and `screenshots/`.

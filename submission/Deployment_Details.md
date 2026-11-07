@@ -1,10 +1,18 @@
 # WorkNest — Deployment & Hosting Guide
 
-## 1. Cloud Hosting Architecture Overview
-WorkNest is prepared for modern decoupled cloud deployment:
+## 1. Verified Live Cloud Deployment URLs
+- **Live Frontend (Vercel):** [https://aurex-internship-month-3-worknest.vercel.app](https://aurex-internship-month-3-worknest.vercel.app)
+- **Live Backend API (Render):** [https://worknest-a3yj.onrender.com](https://worknest-a3yj.onrender.com)
+- **Health Check Endpoint:** [https://worknest-a3yj.onrender.com/api/health](https://worknest-a3yj.onrender.com/api/health)
+- **Cloud Database:** MongoDB Atlas (`WorkNestCluster`)
+
+---
+
+## 2. Cloud Hosting Architecture Overview
+WorkNest operates on a decoupled cloud deployment:
 - **Frontend SPA:** Vercel Hosting (Static build + Client-side router rewrites)
-- **Backend API:** Render or Railway (Node.js web service with Health Check)
-- **Database:** MongoDB Atlas (M0 Free Tier or Dedicated Cluster)
+- **Backend API:** Render Web Service (Node.js/Express with zero-downtime health check)
+- **Database:** MongoDB Atlas (Cloud NoSQL Database)
 
 ---
 

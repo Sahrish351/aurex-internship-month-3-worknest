@@ -99,11 +99,11 @@ def build_pdf(filename="submission/AUREX_Month_3_Submission_Report.pdf"):
 
     # Meta Table
     meta_data = [
-        [Paragraph("<b>Intern:</b> Sahrish (GitHub: Sahrish351)", table_cell), Paragraph("<b>Project:</b> WorkNest", table_cell)],
-        [Paragraph("<b>Category:</b> Task & Project Management SaaS", table_cell), Paragraph("<b>Stage:</b> Month 3 Final Industry Capstone", table_cell)],
-        [Paragraph("<b>Stack:</b> React, Express, MongoDB, Node (MERN)", table_cell), Paragraph("<b>Approval:</b> PROPOSED PROJECT (Pending Review)", table_cell)],
+        [Paragraph("<b>Intern:</b> Sahrish Yaseen (GitHub: Sahrish351)", table_cell), Paragraph("<b>Project:</b> WorkNest", table_cell)],
+        [Paragraph("<b>Live App:</b> https://aurex-internship-month-3-worknest.vercel.app", table_cell), Paragraph("<b>Live API:</b> https://worknest-a3yj.onrender.com", table_cell)],
+        [Paragraph("<b>Stack:</b> React 18, Express, MongoDB Atlas, Node", table_cell), Paragraph("<b>Approval:</b> PROPOSED PROJECT (Pending Review)", table_cell)],
     ]
-    t_meta = Table(meta_data, colWidths=[260, 260])
+    t_meta = Table(meta_data, colWidths=[270, 250])
     t_meta.setStyle(TableStyle([
         ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#FAF9F6')),
         ('BOX', (0,0), (-1,-1), 0.5, colors.HexColor('#E9EAE5')),
@@ -170,7 +170,7 @@ def build_pdf(filename="submission/AUREX_Month_3_Submission_Report.pdf"):
         [Paragraph("Authentication & Security", table_cell), Paragraph("10%", table_cell), Paragraph("10%", table_cell), Paragraph("Bcrypt hashing, JWT tokens, RBAC route guards", table_cell)],
         [Paragraph("Business Features & Functionality", table_cell), Paragraph("10%", table_cell), Paragraph("10%", table_cell), Paragraph("Kanban drag-and-drop, task comments, audit logs", table_cell)],
         [Paragraph("Testing & Debugging", table_cell), Paragraph("10%", table_cell), Paragraph("10%", table_cell), Paragraph("Jest + Supertest (28/28 passed), Postman collection", table_cell)],
-        [Paragraph("Production Deployment", table_cell), Paragraph("5%", table_cell), Paragraph("5%", table_cell), Paragraph("vercel.json, render.yaml, /api/health endpoint", table_cell)],
+        [Paragraph("Production Deployment", table_cell), Paragraph("5%", table_cell), Paragraph("5%", table_cell), Paragraph("Live Vercel + Render deployment, /api/health endpoint", table_cell)],
         [Paragraph("Code Quality & GitHub Practice", table_cell), Paragraph("5%", table_cell), Paragraph("5%", table_cell), Paragraph("Clean commits, strict .gitignore, zero exposed secrets", table_cell)],
         [Paragraph("Documentation & Presentation", table_cell), Paragraph("5%", table_cell), Paragraph("5%", table_cell), Paragraph("README.md, presentation script, PDF report", table_cell)],
         [Paragraph("Independence & Problem Solving", table_cell), Paragraph("5%", table_cell), Paragraph("5%", table_cell), Paragraph("Self-directed architecture, domain constraint solutions", table_cell)],

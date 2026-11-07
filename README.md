@@ -2,10 +2,17 @@
 
 > **Tagline:** Plan projects. Organize teams. Deliver work.
 
+[![Live Application](https://img.shields.io/badge/Live%20Demo-Vercel%20Production-286B52?style=for-the-badge&logo=vercel)](https://aurex-internship-month-3-worknest.vercel.app)
+[![Live API Service](https://img.shields.io/badge/API%20Health-Render%20Cloud-173D32?style=for-the-badge&logo=render)](https://worknest-a3yj.onrender.com/api/health)
+
 [![AUREX Internship](https://img.shields.io/badge/AUREX-Full--Stack%20Month%203-173D32?style=flat-square)](https://aurex.tech)
 [![MERN Stack](https://img.shields.io/badge/Stack-React%20%7C%20Express%20%7C%20MongoDB%20Atlas%20%7C%20Node-286B52?style=flat-square)](https://nodejs.org)
 [![Tests Passing](https://img.shields.io/badge/Jest%20%26%20Supertest-28%2F28%20Passed-green?style=flat-square)](https://jestjs.io)
 [![Status](https://img.shields.io/badge/Approval%20Status-Proposed%20Capstone-amber?style=flat-square)](#important-project-approval-notice)
+
+### 🌐 Live Production Links
+- **Web Application:** [https://aurex-internship-month-3-worknest.vercel.app](https://aurex-internship-month-3-worknest.vercel.app)
+- **REST API Health Check:** [https://worknest-a3yj.onrender.com/api/health](https://worknest-a3yj.onrender.com/api/health)
 
 ---
 

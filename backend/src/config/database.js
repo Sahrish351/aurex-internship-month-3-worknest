@@ -2,11 +2,13 @@ const dns = require('dns');
 const mongoose = require('mongoose');
 const environment = require('./environment');
 
-// Ensure SRV records for MongoDB Atlas resolve reliably across local DNS providers
-try {
-  dns.setServers(['8.8.8.8', '1.1.1.1', '8.8.4.4']);
-} catch (dnsErr) {
-  // Ignore if custom DNS cannot be set
+// Ensure SRV records for MongoDB Atlas resolve reliably across local DNS providers on Windows
+if (process.platform === 'win32') {
+  try {
+    dns.setServers(['8.8.8.8', '1.1.1.1', '8.8.4.4']);
+  } catch (dnsErr) {
+    // Ignore if custom DNS cannot be set
+  }
 }
 
 const connectDatabase = async () => {

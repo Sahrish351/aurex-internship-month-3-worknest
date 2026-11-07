@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
+    "seed": "node src/seed.js",
     "test": "jest --runInBand --detectOpenHandles --forceExit"
   },
   "dependencies": {
@@ -26,3 +27,4 @@
     "supertest": "^7.0.0"
   }
 }
+

@@ -4,13 +4,18 @@ const environment = require('./config/environment');
 
 const startServer = async () => {
   try {
-    // 1. Establish database connection (non-fatal so server can bind port and report diagnostics)
-    try {
-      await connectDatabase();
-    } catch (dbErr) {
-      console.error(`[MongoDB Atlas Startup Error]: ${dbErr.message}`);
-      console.warn('[Server Diagnostics]: Continuing to start HTTP server so port binds and health checks are accessible.');
-    }
+    // 1. Establish database connection with automatic retry loop if disconnected
+    const attemptDbConnect = async () => {
+      try {
+        await connectDatabase();
+      } catch (dbErr) {
+        console.error(`[MongoDB Atlas Startup Error]: ${dbErr.message}`);
+        console.warn('[Server Diagnostics]: Server is listening; retrying database connection in 15 seconds...');
+        setTimeout(attemptDbConnect, 15000);
+      }
+    };
+
+    attemptDbConnect();
 
     // 2. Start HTTP server binding to 0.0.0.0 for containerized environments (Render / Docker)
     const server = app.listen(environment.port, '0.0.0.0', () => {

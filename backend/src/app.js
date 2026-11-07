@@ -75,6 +75,14 @@ app.use('/api/auth/register', authLimiter);
 
 // 5. Health Check Endpoint
 app.get('/api/health', (req, res) => {
+  if (mongoose.connection.readyState === 0) {
+    // Trigger background connection attempt if not already connecting/connected
+    const connectDatabase = require('./config/database');
+    connectDatabase().catch((err) => {
+      console.warn(`[Health Check Reconnect Attempt Failed]: ${err.message}`);
+    });
+  }
+
   const dbStatus = mongoose.connection.readyState === 1 ? 'connected' : 'disconnected';
   res.status(200).json({
     success: true,

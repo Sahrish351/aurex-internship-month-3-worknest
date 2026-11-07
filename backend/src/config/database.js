@@ -25,8 +25,10 @@ const connectDatabase = async () => {
     console.log(`[MongoDB Atlas] Successfully connected to host: ${conn.connection.host} | DB: ${conn.connection.name}`);
     console.log(`[MongoDB Atlas] Ping response: ${JSON.stringify(pingResult)}`);
 
+    global.lastDbError = null;
     return conn;
   } catch (error) {
+    global.lastDbError = error.message;
     console.error(`[MongoDB Connection Error] Failed to connect: ${error.message}`);
     throw error;
   }

@@ -79,6 +79,7 @@ app.get('/api/health', (req, res) => {
     // Trigger background connection attempt if not already connecting/connected
     const connectDatabase = require('./config/database');
     connectDatabase().catch((err) => {
+      global.lastDbError = err.message;
       console.warn(`[Health Check Reconnect Attempt Failed]: ${err.message}`);
     });
   }
@@ -88,6 +89,9 @@ app.get('/api/health', (req, res) => {
     success: true,
     status: 'healthy',
     database: dbStatus,
+    hasMongoUri: Boolean(process.env.MONGODB_URI),
+    mongoHost: process.env.MONGODB_URI ? (process.env.MONGODB_URI.split('@')[1] ? process.env.MONGODB_URI.split('@')[1].split('/')[0] : 'custom') : 'NOT_SET',
+    lastDbError: global.lastDbError || (dbStatus === 'connected' ? null : 'Initial connection pending or failed'),
     service: 'WorkNest REST API',
     uptime: process.uptime(),
     timestamp: new Date().toISOString(),

@@ -9,6 +9,7 @@ const startServer = async () => {
       try {
         await connectDatabase();
       } catch (dbErr) {
+        global.lastDbError = dbErr.message;
         console.error(`[MongoDB Atlas Startup Error]: ${dbErr.message}`);
         console.warn('[Server Diagnostics]: Server is listening; retrying database connection in 15 seconds...');
         setTimeout(attemptDbConnect, 15000);

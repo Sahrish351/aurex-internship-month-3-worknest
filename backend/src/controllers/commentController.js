@@ -80,6 +80,67 @@ const getTaskComments = async (req, res, next) => {
   }
 };
 
+// @desc    Update / edit comment
+// @route   PUT /api/comments/:id
+// @access  Authenticated (Author or Admin)
+const updateComment = async (req, res, next) => {
+  try {
+    const { text } = req.body;
+    if (!text || !text.trim()) {
+      return res.status(400).json({
+        success: false,
+        error: { message: 'Comment text is required.' },
+      });
+    }
+
+    if (text.trim().length > 2000) {
+      return res.status(400).json({
+        success: false,
+        error: { message: 'Comment cannot exceed 2000 characters.' },
+      });
+    }
+
+    const comment = await Comment.findById(req.params.id);
+    if (!comment) {
+      return res.status(404).json({
+        success: false,
+        error: { message: 'Comment not found.' },
+      });
+    }
+
+    const isAuthor = comment.author.toString() === req.user._id.toString();
+    const isAdmin = req.user.role === 'admin';
+
+    if (!isAuthor && !isAdmin) {
+      return res.status(403).json({
+        success: false,
+        error: { message: 'Forbidden. You can only edit your own comments.' },
+      });
+    }
+
+    comment.text = text.trim();
+    await comment.save();
+
+    const populated = await Comment.findById(comment._id).populate('author', 'name email avatar role');
+
+    await logActivity({
+      actor: req.user._id,
+      action: 'COMMENT_UPDATED',
+      entityType: 'Comment',
+      entityId: comment._id,
+      details: `${req.user.name} updated comment on task`,
+    });
+
+    res.status(200).json({
+      success: true,
+      message: 'Comment updated successfully',
+      data: { comment: populated },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 // @desc    Delete comment
 // @route   DELETE /api/comments/:id
 // @access  Authenticated (Author or Admin)
@@ -117,5 +178,6 @@ const deleteComment = async (req, res, next) => {
 module.exports = {
   addComment,
   getTaskComments,
+  updateComment,
   deleteComment,
 };

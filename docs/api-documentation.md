@@ -224,9 +224,16 @@
 - **Access:** Authenticated (Project members)
 - **Success (200 OK):** Returns chronological list of task comments.
 
-### 3. Delete Comment
+### 3. Update / Edit Comment
+- **Method:** `PUT /api/comments/:id`
+- **Access:** Authenticated (Comment author or `admin` only)
+- **Request Body:** `{ "text": "Updated discussion feedback and status." }`
+- **Success (200 OK):** Returns updated comment document populated with author details.
+- **Errors:** `400 Bad Request` (empty text), `403 Forbidden` (non-author/non-admin), `404 Not Found`.
+
+### 4. Delete Comment
 - **Method:** `DELETE /api/comments/:id`
-- **Access:** Authenticated (Comment author or admin only)
+- **Access:** Authenticated (Comment author or `admin` only)
 - **Success (200 OK):** Returns deletion confirmation.
 
 ---

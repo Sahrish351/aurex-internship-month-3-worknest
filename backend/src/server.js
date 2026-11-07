@@ -4,14 +4,10 @@ const environment = require('./config/environment');
 
 const startServer = async () => {
   try {
-    // Attempt database connection
-    try {
-      await connectDatabase();
-    } catch (dbErr) {
-      console.warn(`[Server Warning] MongoDB connection failed: ${dbErr.message}`);
-      console.warn('[Server Warning] Continuing to start server for routing and health checks.');
-    }
+    // 1. Establish verified database connection before listening
+    await connectDatabase();
 
+    // 2. Start HTTP server
     const server = app.listen(environment.port, () => {
       console.log(`=======================================================`);
       console.log(` WorkNest API Server running in [${environment.nodeEnv}] mode`);
@@ -23,7 +19,6 @@ const startServer = async () => {
     // Handle Unhandled Promise Rejections
     process.on('unhandledRejection', (err) => {
       console.error(`[Unhandled Rejection] ${err.message}`);
-      // Close server & exit process
       server.close(() => process.exit(1));
     });
 
@@ -33,7 +28,7 @@ const startServer = async () => {
       process.exit(1);
     });
   } catch (err) {
-    console.error(`Fatal Server Error: ${err.message}`);
+    console.error(`[Fatal Server Startup Error]: Could not establish MongoDB Atlas connection: ${err.message}`);
     process.exit(1);
   }
 };

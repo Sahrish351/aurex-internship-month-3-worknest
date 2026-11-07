@@ -1,0 +1,16 @@
+{
+  "name": "aurex-internship-month-3-worknest",
+  "version": "1.0.0",
+  "description": "WorkNest - Team Project & Task Management Platform (AUREX Month 3 Full-Stack Capstone)",
+  "private": true,
+  "scripts": {
+    "test": "npm --prefix backend test",
+    "seed": "npm --prefix backend run seed",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build"
+  },
+  "author": "Sahrish (GitHub: Sahrish351)",
+  "license": "MIT"
+}
+

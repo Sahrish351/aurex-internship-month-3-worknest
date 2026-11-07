@@ -3,6 +3,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const rateLimit = require('express-rate-limit');
+const mongoose = require('mongoose');
 const environment = require('./config/environment');
 
 // Import routes
@@ -74,9 +75,11 @@ app.use('/api/auth/register', authLimiter);
 
 // 5. Health Check Endpoint
 app.get('/api/health', (req, res) => {
+  const dbStatus = mongoose.connection.readyState === 1 ? 'connected' : 'disconnected';
   res.status(200).json({
     success: true,
     status: 'healthy',
+    database: dbStatus,
     service: 'WorkNest REST API',
     uptime: process.uptime(),
     timestamp: new Date().toISOString(),
